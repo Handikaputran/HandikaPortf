@@ -15,8 +15,8 @@
   scale: 0.9;
 }
 section{
-  height: max-content;
-  min-height: 800px;
+  height: 100vh;
+  max-height: 800px;
 }
 
 
