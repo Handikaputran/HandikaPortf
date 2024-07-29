@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playwrite+DK+Loopet:wght@100..400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Space+Grotesk:wght@300..700&display=swap');
+
+.poppins{
+    font-family: "Poppins", sans-serif;
+}
+.montserrat{
+    font-family: "Montserrat", sans-serif;
+}
+
+*{
+    font-family: "Poppins", sans-serif;
+
+}
+
+    .clipo{
+        clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+    }
+    
+.kanit{
+    font-family: "Kanit", sans-serif;
+}
+
+.playwrite{
+    font-family: "Playwrite DK Loopet", cursive;
+}
+.text-none{
+    font-size: 0;
+}
+.text-gradient{
+    background: rgb(238,174,202);
+    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(199,0,252,0) 0%, rgba(255,255,255,1) 0%, rgba(251,252,254,1) 0%, rgba(209,0,255,0) 0%, rgba(208,95,251,1) 0%, rgba(44,141,255,1) 51%, rgba(206,224,245,1) 100%);
+background-clip: text;
+-webkit-background-clip: text;
+color: transparent;
+}
+.font-space{
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.font-arsenal{
+    font-family: "Arsenal SC", sans-serif;
+}
+
+.font-edu{
+    font-family: "Edu AU VIC WA NT Hand", cursive;
+}
