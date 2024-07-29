@@ -450,13 +450,13 @@
             </div>
 
         </section>
-        <section id="contact-me" class="w-full max-w-7xl flex items-center justify-start md:justify-center flex-col relative ">
+        <section id="contact-me" class="w-full max-w-7xl pt-8 flex items-center justify-start md:justify-center flex-col relative ">
             <div class="text-xl pb-4 text-gradient font-space">Contact Me</div>
 
             <div class="box w-full p-4 flex flex-col items-center justify-start h-full ">
-                <form method="POST"
+                <form id="contact-form" method="POST"
                     class="w-full z-40 bg-form border-8  border-white overflow-hidden relative shadow-lg rounded-2xl p-4 max-w-96"
-                    action="">
+                    action="" onsubmit="sendEmail(event)">
                     <img class="absolute w-60 h-60 -bottom-24 -right-24" src="assetImg/1x/moon.webp" alt="">
                     <div class="medsos flex h-12 w-full items-center justify-between text-white">
                         <div
@@ -525,7 +525,28 @@
 
     <script src="script.js"></script>
 
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        // Inisialisasi EmailJS dengan user ID Anda
+        emailjs.init("lFE3D_ofDYaLdqNEl");
 
+        function sendEmail(event) {
+            event.preventDefault(); // Mencegah form dari pengiriman default
+
+            var form = document.getElementById('contact-form');
+            if (!form) {
+                console.error('Form element not found');
+                return;
+            }
+
+            emailjs.sendForm('service_cgxuc1t', 'template_1cxx47o', form)
+                .then(function(response) {
+                    alert('Email sent successfully!');
+                }, function(error) {
+                    alert('Failed to send email: ' + JSON.stringify(error));
+                });
+        }
+    </script>
 </body>
 
 </html>

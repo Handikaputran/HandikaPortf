@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
 var scrollPosition = (divElement[0].scrollWidth - divElement.outerWidth()) / 2;
 divElement.scrollLeft(scrollPosition);
                       }
+                      
                 contentDiv.classList.remove('hidden');
                 contentDiv.classList.remove('animate__animated', 'animate__fadeOut');
             } else {
