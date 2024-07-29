@@ -62,6 +62,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (pageYOffset >= (sectionTop - viewportHeight / 3) && pageYOffset < (sectionTop +
                     sectionHeight - viewportHeight / 3)) {
+                      if(section.id == 'about'){
+                        var divElement = $('#about-skill');
+var scrollPosition = (divElement[0].scrollWidth - divElement.outerWidth()) / 2;
+divElement.scrollLeft(scrollPosition);
+                      }
                 contentDiv.classList.remove('hidden');
                 contentDiv.classList.remove('animate__animated', 'animate__fadeOut');
             } else {
@@ -136,9 +141,7 @@ function visibilityNav(condition) {
     }
   }
 }
-var divElement = $('#about-skill');
-var scrollPosition = (divElement[0].scrollWidth - divElement.outerWidth()) / 2;
-divElement.scrollLeft(scrollPosition);
+
 
 $(document).ready(function() {
   visibilityNav(true);

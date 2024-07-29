@@ -14,7 +14,10 @@
   animation-delay: 0.5s ;
   scale: 0.9;
 }
-
+section{
+  height: max-content;
+  min-height: 800px;
+}
 
 
 .job-animation{
