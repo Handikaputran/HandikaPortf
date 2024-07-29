@@ -20,12 +20,10 @@
 </head>
 
 <body>
-    <!-- @if ( session('success'))
-        <x-main-notification :message=" session('success')"/>
-    @elseif (session('error'))
-        <x-main-notification :message="session('error')"/>
-    @endif -->
 
+<div id="notiv-container" class="notiv fixed z-50 top-0 right-0 w-screen max-w-60 p-2 flex flex-col gap-2 hidden">
+  </div>
+  
 
     <div id="main-nav"
         class="nav z-50 fixed bottom-4 right-1/2 text-2xl flex  translate-x-1/2 main-nav max-w-96 text-white shadow-purple h-12 items-center justify-center  rounded-full bg-purple-600">
@@ -308,7 +306,7 @@
         <section id="about"
             class=" w-full  flex flex-col justify-center bg-sky-100 items-center overflow-x-hidden relative">
             <img src="assetImg/cloud/1x/whiteCloud.webp" class="bottom-0 left-0 absolute w-screen z-10" alt="">
-            <div class="box flex flex-col w-full items-center h-auto p-4">
+            <div class="box flex flex-col w-full items-center justify-center h-auto p-4">
                 <div class="plugin flex w-5/6 max-w-96 gap-2 items-center justify-center ">
                     <img class="w-1/4 flex-1 opacity-55" src="assetImg/pluginapp/laravel.svg" alt="">
                     <img class="w-1/4 flex-1 opacity-55" src="assetImg/pluginapp/pngegg.png" alt="">
@@ -320,11 +318,11 @@
                         development, and web development</div>
                 </div>
 
-                <div id="about-skill" class="box-about scroll-x w-full max-w-fit z-20    overflow-x-auto">
+                <div id="about-skill" class="box-about scroll-x w-full max-w-fit z-20  flex   overflow-x-auto">
                     <div
-                        class="card-box-about  mt-4 box-content min-w-max animed  flex py-4 items-center justify-center">
+                        class="card-box-about  mt-4 box-content min-w-fit animed  flex py-4 items-center ">
                         <div
-                            class="card-about  active-about max-w-80 flex flex-col  w-full flex-shrink-0 pt-2 pb-8  min-h-96 rounded-lg bg-white shadow-xl">
+                            class="card-about animate__animated animate__fadeInUp animate__slow active-about max-w-80 flex flex-col  w-full flex-shrink-0 pt-2 pb-8  min-h-96 rounded-lg bg-white shadow-xl">
                             <div class="text-xl kanit gradient mt-4 w-fit py-1 px-4 text-white">API Development</div>
                             <div class="text-small pl-4 mt-4 pr-4"><small>I specialize in creating efficient and secure
                                     APIs to power various applications. My API development skills include:</small></div>
@@ -337,7 +335,7 @@
                             </ul>
                         </div>
                         <div
-                            class="card-about  active-about max-w-80 flex flex-col  w-full flex-shrink-0 pt-2 pb-8  min-h-96 rounded-lg bg-white shadow-xl">
+                            class="card-about animate__animated animate__fadeInUp animate__slow active-about max-w-80 flex flex-col  w-full flex-shrink-0 pt-2 pb-8  min-h-96 rounded-lg bg-white shadow-xl">
                             <div class="text-xl kanit gradient mt-4 w-fit py-1 px-4 text-white">Web Development</div>
                             <div class="text-small pl-4 mt-4"><small>I excel in building responsive and user-friendly
                                     websites. My web development skills include:</small></div>
@@ -350,7 +348,7 @@
                             </ul>
                         </div>
                         <div
-                            class="card-about  active-about max-w-80 flex flex-col  w-full flex-shrink-0 pt-2 pb-8  min-h-96 rounded-lg bg-white shadow-xl">
+                            class="card-about animate__animated animate__fadeInUp animate__slow active-about max-w-80 flex flex-col  w-full flex-shrink-0 pt-2 pb-8  min-h-96 rounded-lg bg-white shadow-xl">
                             <div class="text-xl kanit gradient mt-4 w-fit py-1 px-4 text-white">Unity Development</div>
                             <div class="text-small pl-4 mt-4"><small>I have extensive experience in Unity, where I have
                                     developed a
@@ -450,7 +448,7 @@
             </div>
 
         </section>
-        <section id="contact-me" class="w-full max-w-7xl pt-8 flex items-center justify-start md:justify-center flex-col relative ">
+        <section id="contact-me" class="w-full  pt-8 flex items-center justify-start md:justify-center flex-col relative ">
             <div class="text-xl pb-4 text-gradient font-space">Contact Me</div>
 
             <div class="box w-full p-4 flex flex-col items-center justify-start h-full ">
@@ -482,13 +480,13 @@
                             <ion-icon name="logo-linkedin"></ion-icon>
                         </div>
                     </div>
-                    <input
+                    <input required
                         class=" w-full my-4 rounded-full border-2 border-white ring-0 shadow-inner focus:border-white  focus:ring-0"
-                        type="text" name="nama" placeholder="Name">
-                    <input
+                        type="text" name="name" placeholder="Name">
+                    <input required
                         class="w-full rounded-full border-2 border-white ring-transparent focus:border-white  focus:ring-0 shadow-inner"
                         type="email" name="email" autocomplete="email" placeholder="Email">
-                    <textarea placeholder="Message here" maxlength="255"
+                    <textarea required placeholder="Message here" maxlength="255"
                         class="w-full h-28 p-3 scroll-hidden  resize-none rounded-3xl shadow-inner focus:border-white mt-4 border-2 border-white ring-transparent  focus:ring-0 "
                         name="message" id="pesan" cols="30" rows="10"></textarea>
                     <button
@@ -541,9 +539,12 @@
 
             emailjs.sendForm('service_cgxuc1t', 'template_huyhgki', form)
                 .then(function(response) {
-                    alert('Email sent successfully!');
+                     showNotification('Message Send');
+                    form.reset();
+
                 }, function(error) {
-                    alert('Failed to send email: ' + JSON.stringify(error));
+                    showNotification('Failed To Send');
+                    form.reset();
                 });
         }
     </script>

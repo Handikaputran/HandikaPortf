@@ -62,12 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (pageYOffset >= (sectionTop - viewportHeight / 3) && pageYOffset < (sectionTop +
                     sectionHeight - viewportHeight / 3)) {
-                      if(section.id == 'about'){
-                        var divElement = $('#about-skill');
-var scrollPosition = (divElement[0].scrollWidth - divElement.outerWidth()) / 2;
-divElement.scrollLeft(scrollPosition);
-                      }
-                      
+                   
                 contentDiv.classList.remove('hidden');
                 contentDiv.classList.remove('animate__animated', 'animate__fadeOut');
             } else {
@@ -147,3 +142,51 @@ function visibilityNav(condition) {
 $(document).ready(function() {
   visibilityNav(true);
 });
+
+
+
+function showNotification(message) {
+  const $notivContainer = $('#notiv-container');
+
+  // Buat elemen notifikasi baru
+  const $notivBox = $('<div>', { class: 'box w-full h-14 bg-white items-center shadow-md border-slate-200 border overflow-hidden rounded-s-full gap-2 rounded-ee-full flex relative opacity-0' });
+  const $icon = $('<div>', { class: 'icon w-14 h-14 text-4xl rounded-full flex items-center justify-center shadow-md' }).html('<ion-icon name="notifications"></ion-icon>');
+  const $message = $('<div>').text(message);
+  const $removeBtn = $('<button>', { class: 'remove-notiv text-red-400 absolute top-3 right-3' }).html('<ion-icon name="close"></ion-icon>');
+
+  // Gabungkan elemen
+  $notivBox.append($icon, $message, $removeBtn);
+  $notivContainer.append($notivBox);
+
+  // Tampilkan kontainer notifikasi jika belum ditampilkan
+  if ($notivContainer.children().length === 1) {
+    $notivContainer.removeClass('hidden').addClass('show');
+  }
+
+  // Gunakan Tailwind untuk transisi
+  $notivBox.addClass('transition-opacity duration-500 ease-in-out');
+  setTimeout(() => $notivBox.removeClass('opacity-0').addClass('opacity-100'), 10); // delay untuk memulai transisi
+
+  // Atur timer untuk menghilangkan notifikasi setelah 5 detik
+  const hideTimer = setTimeout(() => {
+    $notivBox.removeClass('opacity-100').addClass('opacity-0');
+    setTimeout(() => {
+      $notivBox.remove();
+      if ($notivContainer.children().length === 0) {
+        $notivContainer.removeClass('show').addClass('hidden');
+      }
+    }, 500); // waktu yang sama dengan durasi transisi
+  }, 5000);
+
+  // Tambahkan event listener untuk tombol hapus
+  $removeBtn.on('click', function() {
+    clearTimeout(hideTimer);
+    $notivBox.removeClass('opacity-100').addClass('opacity-0');
+    setTimeout(() => {
+      $notivBox.remove();
+      if ($notivContainer.children().length === 0) {
+        $notivContainer.removeClass('show').addClass('hidden');
+      }
+    }, 500);
+  });
+}

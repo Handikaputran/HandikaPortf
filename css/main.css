@@ -16,7 +16,9 @@
 }
 section{
   height: 100vh;
+  min-height: 700px;
   max-height: 800px;
+  overflow-y: hidden;
 }
 
 
@@ -55,9 +57,12 @@ section{
 .card-about{
   scale: 0.9;
 }
+.box-notiv{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 40px;
+}
 .card-box-about{
-  padding-left: 100px;
-  padding-right: 100px;
+ 
   box-sizing: content-box;
 }
 .project-button:hover > .project-button-child {
