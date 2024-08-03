@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/output.css">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -21,9 +20,9 @@
 
 <body>
 
-<div id="notiv-container" class="notiv fixed z-50 top-0 right-0 w-screen max-w-60 p-2 flex flex-col gap-2 hidden">
-  </div>
-  
+    <div id="notiv-container" class="notiv fixed z-50 top-0 right-0 w-screen max-w-60 p-2 flex flex-col gap-2 hidden">
+    </div>
+
 
     <div id="main-nav"
         class="nav z-50 fixed bottom-4 right-1/2 text-2xl flex  translate-x-1/2 main-nav max-w-96 text-white shadow-purple h-12 items-center justify-center  rounded-full bg-purple-600">
@@ -235,8 +234,7 @@
         <h2 class="kanit mt-36  animate__flash animate__animated animate__infinite animate__slow ">Please Wait</h2>
     </div>
     <div class="main w-screen flex flex-col items-center overflow-x-hidden">
-        <section id="home"
-            class="w-full overflow-y-hidden flex flex-wrap justify-center overflow-x-hidden relative">
+        <section id="home" class="w-full overflow-y-hidden flex flex-wrap justify-center overflow-x-hidden relative">
             <div class="box w-full max-w-7xl flex animed flex-wrap overflow-y-hidden overflow-x-hidden">
                 <div class="picture-content w-full items-end    md:w-1/2 flex md:items-center justify-center">
                     <div
@@ -267,7 +265,7 @@
                     </div>
 
                 </div>
-                <div class="text-content  mt-1 md:mt-0  flex items-center justify-center w-full md:w-1/2 p-3">
+                <div class="text-content w-11/12  mt-1 md:mt-0  flex items-center justify-center w-full md:w-1/2 p-3">
                     <div class="box w-4/5 h-fit flex gap-2 justify-center relative items-center">
                         <div class="text h-full flex-1">
                             <div
@@ -293,7 +291,8 @@
                                 class="flex  animate__animated animate__lightSpeedInRight animate__delay-1s items-center gap-2 gradient rounded-full pl-4 mt-2 hover:bg-purple-400 hover:text-white duration-200 w-fit">
                                 Contact Me <div
                                     class=" w-10 h-10 bg-white border border-purple-500 shadow-sm flex items-center justify-center pl-1 rounded-full">
-                                    <ion-icon class="text-2xl" name="send"></ion-icon></div>
+                                    <ion-icon class="text-2xl" name="send"></ion-icon>
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -319,8 +318,7 @@
                 </div>
 
                 <div id="about-skill" class="box-about scroll-x w-full max-w-fit z-20  flex   overflow-x-auto">
-                    <div
-                        class="card-box-about  mt-4 box-content min-w-fit animed  flex py-4 items-center ">
+                    <div class="card-box-about  mt-4 box-content min-w-fit animed  flex py-4 items-center ">
                         <div
                             class="card-about animate__animated animate__fadeInUp animate__slow active-about max-w-80 flex flex-col  w-full flex-shrink-0 pt-2 pb-8  min-h-96 rounded-lg bg-white shadow-xl">
                             <div class="text-xl kanit gradient mt-4 w-fit py-1 px-4 text-white">API Development</div>
@@ -366,23 +364,84 @@
             </div>
         </section>
 
-        <section id="my-project" class="w-full flex flex-col max-w-7xl items-center justify-center">
+        <section id="my-project" class="w-full flex flex-col  overflow-x-visible items-center justify-center">
+            <div class="text-lg relative max-w-7xl block w-full h-16 text-center overflow-x-visible">
+                <div class="text-xl kanit text-gradient bg-slate-200 inline-block">My Project</div>
+                <img class="absolute w-60 h-60 -z-10 -bottom-20" src="assetImg/1x/moon.webp" alt="">
+                <img class="absolute  h-40 -z-10 -bottom-20 -left-12" src="assetImg/1x/cloud2.webp" alt="">
+                <img class="absolute  h-40 -z-10 -bottom-28" src="assetImg/1x/cloud3.webp" alt="">
+                <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+                    type="module"></script>
+                <dotlottie-player class="absolute  -bottom-12 rotate-90 left-60  w-24 h-24"
+                    src="https://lottie.host/1622d024-45a7-4f11-bdde-f24498da63be/ojGF2Ujsfj.json"
+                    background="transparent" speed="1" loop autoplay></dotlottie-player>
+            </div>
             <div class="box w-full flex flex-col items-center justify-center">
-                <div class="text-lg relative block w-full h-16 text-center">
-                    <div class="text-xl kanit text-gradient bg-slate-200 inline-block">My Project</div>
-                    <img class="absolute w-60 h-60 -z-10 -bottom-20" src="assetImg/1x/moon.webp" alt="">
-                    <img class="absolute  h-40 -z-10 -bottom-20 -left-12" src="assetImg/1x/cloud2.webp" alt="">
-                    <img class="absolute  h-40 -z-10 -bottom-28" src="assetImg/1x/cloud3.webp" alt="">
-                    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
-                        type="module"></script>
-                    <dotlottie-player class="absolute  -bottom-12 rotate-90 left-60  w-24 h-24"
-                        src="https://lottie.host/1622d024-45a7-4f11-bdde-f24498da63be/ojGF2Ujsfj.json"
-                        background="transparent" speed="1" loop autoplay></dotlottie-player>
-                </div>
-                <div id="project-demo" class="box-demo  scroll-hidden w-full max-w-fit  overflow-x-auto p-4 relative">
+             
+                <div id="project-demo"
+                    class="box-demo flex  flex-nowrap  scroll-hidden w-full max-w-fit  overflow-x-auto p-4 relative">
 
                     <div
                         class="card-box-project animed mt-4 box-content min-w-max w-full gap-4  flex py-4 px-16 md:px-0 items-center justify-center relative">
+
+                        <div
+                            class="card-project max-w-80 bg-slate-200 flex flex-col w-60 flex-shrink-0 p-4 animate__animated animate__fadeInUp  pb-8 min-h-80 rounded-lg shadow-xl">
+                            <div class="img-project w-full h-40  rounded-lg">
+                                <script
+                                    src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+                                    type="module"></script>
+
+                                <dotlottie-player
+                                    src="https://lottie.host/a530ab5d-1101-4f34-8b7b-1aee7b1fa20e/rEhVvCfQXq.json"
+                                    background="transparent" speed="1" loop autoplay></dotlottie-player>
+                            </div>
+                            <div class="w-full  bg-slate-100 rounded-2xl h-28 shadow-inner">
+                                <div
+                                    class="title  font-space text-center rounded-full py-2 text-white bg-purple-400 text-lg line-clamp-1">
+                                    HAWI REGENCY
+                                </div>
+                                <div class="text-sm p-2   rounded-lg h-20">
+                                    <small>Unity Game Project</small>
+                                </div>
+                            </div>
+
+                            <button onclick="showVideo('https://www.youtube.com/embed/K4ccnudcaQU?si=vqOECffCh65oS1ri')"
+                                class="w-full h-10 mt-2 bg-white project-button border-4 border-white overflow-hidden rounded-full text-center shadow-inner relative flex items-center justify-center font-space text-red-400">
+                                <div
+                                    class="absolute rounded-full left-0 top-0 w-10 text-white pt-1 project-button-child shadow-md duration-300 h-full text-2xl bg-purple-400">
+                                    <ion-icon class="rotate-90" name="rocket"></ion-icon>
+                                </div>View
+                            </button>
+                        </div>
+                        <div
+                            class="card-project max-w-80 bg-slate-200 flex flex-col w-60 flex-shrink-0 p-4 animate__animated animate__fadeInUp  pb-8 min-h-80 rounded-lg shadow-xl">
+                            <div class="img-project w-full h-40  rounded-lg">
+                                <script
+                                    src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+                                    type="module"></script>
+
+                                <dotlottie-player
+                                    src="https://lottie.host/a530ab5d-1101-4f34-8b7b-1aee7b1fa20e/rEhVvCfQXq.json"
+                                    background="transparent" speed="1" loop autoplay></dotlottie-player>
+                            </div>
+                            <div class="w-full  bg-slate-100 rounded-2xl h-28 shadow-inner">
+                                <div
+                                    class="title  font-space text-center rounded-full py-2 text-white bg-purple-400 text-lg line-clamp-1">
+                                    Si Jali
+                                </div>
+                                <div class="text-sm p-2   rounded-lg h-20">
+                                    <small>Unity Game Project</small>
+                                </div>
+                            </div>
+
+                            <button onclick="showVideo('https://www.youtube.com/embed/_Qah22FFpIQ?si=UjLO_OZyAbHa5tGN')"
+                                class="w-full h-10 mt-2 bg-white project-button border-4 border-white overflow-hidden rounded-full text-center shadow-inner relative flex items-center justify-center font-space text-red-400">
+                                <div
+                                    class="absolute rounded-full left-0 top-0 w-10 text-white pt-1 project-button-child shadow-md duration-300 h-full text-2xl bg-purple-400">
+                                    <ion-icon class="rotate-90" name="rocket"></ion-icon>
+                                </div>View
+                            </button>
+                        </div>
 
                         <div
                             class="card-project max-w-80 bg-slate-200 flex flex-col w-60 flex-shrink-0 p-4 animate__animated animate__fadeInUp  pb-8 min-h-80 rounded-lg shadow-xl">
@@ -448,7 +507,8 @@
             </div>
 
         </section>
-        <section id="contact-me" class="w-full  pt-8 flex items-center justify-start md:justify-center flex-col relative ">
+        <section id="contact-me"
+            class="w-full  pt-8 flex items-center justify-start md:justify-center flex-col relative ">
             <div class="text-xl pb-4 text-gradient font-space">Contact Me</div>
 
             <div class="box w-full p-4 flex flex-col items-center justify-start h-full ">
@@ -461,10 +521,10 @@
                             class="medsos h-12 w-12 relative rounded-full shadow-md flex items-center justify-center text-3xl insta-bg border-4 border-white">
                             <ion-icon name="logo-instagram"></ion-icon>
                         </div>
-                        <div
+                        <a href="https://wa.link/nq9z4o" target="_blank"
                             class="medsos h-12 w-12 rounded-full shadow-md flex items-center justify-center text-3xl border-4 border-white bg-green-400">
                             <ion-icon name="logo-whatsapp"></ion-icon>
-                        </div>
+                        </a>
                         <div
                             class="medsos bg-white h-12 w-12 rounded-full shadow-md flex items-center justify-center text-4xl">
                             <img class="w-full h-full object-cover mb-1 ml-px"
@@ -538,11 +598,11 @@
             }
 
             emailjs.sendForm('service_cgxuc1t', 'template_huyhgki', form)
-                .then(function(response) {
-                     showNotification('Message Send');
+                .then(function (response) {
+                    showNotification('Message Send');
                     form.reset();
 
-                }, function(error) {
+                }, function (error) {
                     showNotification('Failed To Send');
                     form.reset();
                 });

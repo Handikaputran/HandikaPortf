@@ -46,45 +46,38 @@ function closeVideo(){
   $(".mediaViewer").addClass("hidden");
   $(".videoPlayer").attr("src", '');
 }
-document.addEventListener('DOMContentLoaded', function() {
-    const sections = document.querySelectorAll('section');
+$(document).ready(function() {
+  const $sections = $('section');
 
-    function toggleVisibility() {
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            const pageYOffset = window.pageYOffset;
-            const viewportHeight = window.innerHeight;
+  function toggleVisibility() {
+      $sections.each(function() {
+          const $section = $(this);
+          const sectionTop = $section.offset().top;
+          const sectionHeight = $section.outerHeight();
+          const pageYOffset = $(window).scrollTop();
+          const viewportHeight = $(window).height();
 
-            const contentDiv = section.querySelector(
-            '.animed'); // tulisan ini cuma mau ngetes key board aja kok 
-            // apa yang harus aku tulis selanjutnya membuat aku bingung sekali apa coba             
+          let $contentDiv = $section.find('.animed'); // Assuming .animed is inside each section
 
-            if (pageYOffset >= (sectionTop - viewportHeight / 3) && pageYOffset < (sectionTop +
-                    sectionHeight - viewportHeight / 3)) {
-                   
-                contentDiv.classList.remove('hidden');
-                contentDiv.classList.remove('animate__animated', 'animate__fadeOut');
-            } else {
-                if (!contentDiv.classList.contains('hidden')) {
-                    contentDiv.classList.add('animate__animated', 'animate__fadeOut');
+          if (pageYOffset >= (sectionTop - viewportHeight / 3) && pageYOffset < (sectionTop + sectionHeight - viewportHeight / 3)) {
+              $contentDiv.removeClass('hidden');
+              $contentDiv.removeClass('animate__animated animate__fadeOut');
+          } else {
+              if (!$contentDiv.hasClass('hidden')) {
+                  $contentDiv.addClass('animate__animated animate__fadeOut');
+                  $contentDiv.one('animationend', function() {
+                      $contentDiv.addClass('hidden');
+                      $contentDiv.removeClass('animate__animated animate__fadeOut');
+                  });
+              }
+          }
+      });
+  }
 
-                    section.addEventListener('animationend', function handleAnimationEnd() {
-                        contentDiv.classList.add('hidden');
-                        contentDiv.classList.remove('animate__animated', 'animate__fadeOut');
-                        contentDiv.removeEventListener('animationend', handleAnimationEnd);
-                    }, {
-                        once: true
-                    });
-                }
-            }
-        });
-    }
-
-    window.addEventListener('scroll', toggleVisibility);
-    window.addEventListener('resize', toggleVisibility);
-    toggleVisibility(); // Initial check
+  $(window).on('scroll resize', toggleVisibility);
+  toggleVisibility(); // Initial check
 });
+
 let kondisinav = true;
 function navClickMain () {
     visibilityNav(!kondisinav);
