@@ -50,6 +50,26 @@ section{
   }
 }
 
+.job-animation {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.text-elipsis{
+  text-overflow: ellipsis;
+}
+
 .active-about{
   z-index: 5;
   scale: 1;

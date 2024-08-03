@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -265,22 +265,22 @@
                     </div>
 
                 </div>
-                <div class="text-content w-11/12  mt-1 md:mt-0  flex items-center justify-center md:scale-100 scale-90  md:w-1/2 p-3">
-                    <div class="box w-full h-fit flex gap-2 justify-center relative items-center">
-                        <div class="text h-full flex-1">
+                <div class="text-content  mt-1 md:mt-0  flex items-center justify-center w-full md:w-1/2 p-3">
+                    <div class="box  w-11/12 h-fit flex gap-2 justify-center relative items-center">
+                        <div class="text h-full flex-1  max-w-full ">
                             <div
                                 class="name text-4xl mb-2  animate__animated animate__slowest animate__lightSpeedInRight kanit text-gradient">
-                                Handika Putra</div>
+                                Handika Putra
+                            </div>
                             <div
-                                class="text-2xl  animate__animated animate__slow animate__lightSpeedInRight flex gap-2">
-                                I'am <div
-                                    class="job w-40 flex items-center flex-col px-4 overflow-hidden rounded-full  relative text-center bg-purple-500  text-white">
-                                    <div class="items flex flex-col  job-animation absolute">
-                                        <span class="job-i kanit">Website</span> <span class="job-1 kanit">API</span>
-                                        <span class="job-1 kanit">2D
-                                            Game</span>
-                                    </div>
-                                </div> Developer</div>
+                                class="text-2xl text-elipsis  animate__animated animate__slow animate__lightSpeedInRight flex gap-2">
+                                I'am
+                                <div
+                                    class="job-container px-4 min-w-fit whitespace-nowrap box-content  overflow-hidden  relative  bg-purple-500 w-fit text-white">
+                                    <div class="job-animation w-fit"></div>
+                                </div>
+                                Developer
+                            </div>
                             <div
                                 class="text-sm  animate__animated animate__lightSpeedInRight animate__delay-1s border-t-2 mt-4 pt-2 border-purple-600">
                                 Explore my portfolio to see a showcase of my work, from interactive 2D experiences in
@@ -377,7 +377,7 @@
                     background="transparent" speed="1" loop autoplay></dotlottie-player>
             </div>
             <div class="box w-full flex flex-col items-center justify-center">
-             
+
                 <div id="project-demo"
                     class="box-demo flex  flex-nowrap  scroll-hidden w-full max-w-fit  overflow-x-auto p-4 relative">
 
@@ -541,10 +541,10 @@
                         </div>
                     </div>
                     <input required
-                        class=" w-full my-4 pl-3 rounded-full border-2 border-white ring-0 shadow-inner focus:border-white  focus:ring-0"
+                        class=" w-full my-4 rounded-full border-2 border-white ring-0 shadow-inner focus:border-white  focus:ring-0"
                         type="text" name="name" placeholder="Name">
                     <input required
-                        class="w-full pl-3 rounded-full border-2 border-white ring-transparent focus:border-white  focus:ring-0 shadow-inner"
+                        class="w-full rounded-full border-2 border-white ring-transparent focus:border-white  focus:ring-0 shadow-inner"
                         type="email" name="email" autocomplete="email" placeholder="Email">
                     <textarea required placeholder="Message here" maxlength="255"
                         class="w-full h-28 p-3 scroll-hidden  resize-none rounded-3xl shadow-inner focus:border-white mt-4 border-2 border-white ring-transparent  focus:ring-0 "

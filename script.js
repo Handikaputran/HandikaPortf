@@ -183,3 +183,41 @@ function showNotification(message) {
     }, 500);
   });
 }
+
+// text writter
+
+$(document).ready(function() {
+  const $jobContainer = $('.job-animation');
+  const jobs = ["Website", "API", "Game"];
+  let jobIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let typingSpeed = 150; // Adjust typing speed
+  let erasingSpeed = 100; // Adjust erasing speed
+  let newWordDelay = 2000; // Delay between current and next word
+
+  function type() {
+      const currentJob = jobs[jobIndex];
+      const displayedText = currentJob.substring(0, charIndex);
+
+      $jobContainer.text(displayedText);
+
+      if (!isDeleting && charIndex < currentJob.length) {
+          charIndex++;
+          setTimeout(type, typingSpeed);
+      } else if (isDeleting && charIndex > 0) {
+          charIndex--;
+          setTimeout(type, erasingSpeed);
+      } else if (!isDeleting && charIndex === currentJob.length) {
+          isDeleting = true;
+          setTimeout(type, newWordDelay);
+      } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          jobIndex = (jobIndex + 1) % jobs.length;
+          setTimeout(type, typingSpeed);
+      }
+  }
+
+  setTimeout(type, typingSpeed);
+});
+
