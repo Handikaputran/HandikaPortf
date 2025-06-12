@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rani ❤️ Kepin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap');
+        
+        .font-pacifico { font-family: 'Pacifico', cursive; }
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+        
+        /* Floating hearts animation */
+        .heart {
+            position: absolute;
+            color: rgba(255, 182, 193, 0.8);
+            font-size: 20px;
+            animation: float 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        .heart:nth-child(odd) {
+            animation-delay: -2s;
+            color: rgba(255, 105, 180, 0.7);
+        }
+        
+        .heart:nth-child(3n) {
+            animation-delay: -4s;
+            font-size: 16px;
+            color: rgba(255, 20, 147, 0.6);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+        
+        /* Pulse animation for main card */
+        .pulse-love {
+            animation: pulse-love 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-love {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* Gradient background */
+        .bg-love-gradient {
+            background: linear-gradient(135deg, #ff6b9d, #ffc3e1, #ff8fab, #ffb3d1);
+            background-size: 400% 400%;
+            animation: gradient-shift 8s ease infinite;
+        }
+        
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Button hover effects */
+        .btn-love {
+            transition: all 0.3s ease;
+            background: linear-gradient(45deg, #ff6b9d, #ff8fab);
+        }
+        
+        .btn-love:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 157, 0.4);
+        }
+        
+        /* Modal animation */
+        .modal-backdrop {
+            backdrop-filter: blur(10px);
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        .modal-content {
+            animation: slideUp 0.3s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        /* Sparkle animation */
+        .sparkle {
+            position: absolute;
+            color: #fff;
+            animation: sparkle 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-love-gradient min-h-screen flex items-center justify-center font-poppins overflow-hidden">
+    <!-- Floating Hearts -->
+    <div id="hearts-container" class="fixed inset-0 pointer-events-none z-0"></div>
+    
+    <!-- Sparkles -->
+    <div id="sparkles-container" class="fixed inset-0 pointer-events-none z-10"></div>
+    
+    <!-- Main Content -->
+    <div class="relative z-20 w-full max-w-md mx-auto p-6">
+        <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-8 text-center pulse-love">
+            <!-- Main Title -->
+            <div class="mb-8">
+                <h1 class="font-pacifico text-4xl text-pink-600 mb-4">
+                    Rani 
+                    <span class="text-red-500 text-5xl animate-pulse">❤️</span> 
+                    Kepin
+                </h1>
+                <div class="w-48 h-48 mx-auto mb-6 rounded-2xl overflow-hidden border-4 border-pink-200 shadow-lg">
+                    <img 
+                        src="rapin.jpg" 
+                        alt="Mas Ishar" 
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+                <!-- Cute Message -->
+                <div class="bg-pink-50 rounded-2xl p-4 mb-6 border-2 border-pink-200">
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        mas ishar atmin jmk menangis di pojokan loh rek 😹🤭
+                    </p>
+                </div>
+                
+                <!-- Button -->
+                <button 
+                    id="showModalBtn"
+                    class="btn-love text-white px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transform transition-all duration-300"
+                >
+                    Lihat Keadaan Mas Ishar 👀
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 bg-black/50 modal-backdrop hidden z-50 flex items-center justify-center p-4">
+        <div class="modal-content bg-white rounded-3xl p-6 max-w-sm w-full mx-4 shadow-2xl">
+            <div class="text-center">
+                <h3 class="font-pacifico text-2xl text-pink-600 mb-4">Mas Ishar Sekarang</h3>
+                
+                <!-- Photo Container -->
+                <div class="w-48 h-48 mx-auto mb-6 rounded-2xl overflow-hidden border-4 border-pink-200 shadow-lg">
+                    <img 
+                        src="ishar.jpg" 
+                        alt="Mas Ishar" 
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+                
+                <p class="text-gray-600 mb-6 text-sm">
+                    Benar-benar menangis di pojokan! 😭💔
+                </p>
+                
+                <!-- Back Button -->
+                <button 
+                    id="closeModalBtn"
+                    class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:transform hover:scale-105"
+                >
+                    Kembali
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = Math.random() > 0.5 ? '❤️' : '💕';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            document.getElementById('hearts-container').appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 7000);
+        }
+        
+        // Create sparkles
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.innerHTML = '✨';
+            sparkle.style.left = Math.random() * 100 + 'vw';
+            sparkle.style.top = Math.random() * 100 + 'vh';
+            sparkle.style.animationDelay = Math.random() * 2 + 's';
+            document.getElementById('sparkles-container').appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 3000);
+        }
+        
+        // Generate hearts and sparkles
+        setInterval(createHeart, 800);
+        setInterval(createSparkle, 1500);
+        
+        // Modal functionality
+        const modal = document.getElementById('modal');
+        const showModalBtn = document.getElementById('showModalBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        
+        showModalBtn.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+        });
+        
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+        
+        // Close modal when clicking backdrop
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+            }
+        });
+        
+        // Initial hearts and sparkles
+        for (let i = 0; i < 5; i++) {
+            setTimeout(createHeart, i * 1000);
+            setTimeout(createSparkle, i * 1500);
+        }
+    </script>
+</body>
+</html>
